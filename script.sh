@@ -67,7 +67,7 @@ while [[ "$1" =~ ^- && ! "$1" == "--" ]]; do case $1 in
     ;;
   -f | --footer )
     shift
-    footer=$1
+    footer_center=$1
     ;;
   -t | --toc )
     toc="--toc"
@@ -114,17 +114,14 @@ if [ -z "$title" ]; then
   exit 1
 fi
 
+# Ensure the title page logo exists if provided
+if [ -n "$titlepage_logo" ] && [ ! -f "$titlepage_logo" ]; then
+  echo "Title page logo not found!"
+  exit 1
+fi
+
 # Generate a temporary file in the temporary folder
 tmp_file=$(mktemp)
-
-# If the temp file already exists, ask if overwrite, or exit
-if [ -f "$tmp_file" ]; then
-  read -p "Temporary file already exists. Overwrite? [y/N] " -n 1 -r
-  echo
-  if [[ ! $REPLY =~ ^[Yy]$ ]]; then
-    exit 1
-  fi
-fi
 
 # Add metadata at the beginning of the markdown file
 cat <<EOF > "$tmp_file"
@@ -177,7 +174,7 @@ mmdc -i "$temp_file_path" -o "$temp_file_path" -e $images_ext -b transparent -t 
 command="pandoc $temp_file_path -f markdown-raw_tex -o $output --pdf-engine=xelatex --from markdown --template eisvogel --listings --list-tables $toc"
 
 # Execute the command
-eval $command && echo "PDF generated as $output"
+eval "$command" && echo "PDF generated as $output"
 
 # Remove the temporary files
 rm $temp_file_path

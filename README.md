@@ -1,5 +1,7 @@
 # Eisvogel automation
 
+![Repo Logo](./res/repo_logo.png)
+
 This little script aims at automating the use of the [Eisvogel template](https://github.com/Wandmalfarbe/pandoc-latex-template/tree/master) by [Pascal Wagler](https://github.com/Wandmalfarbe). Feel free to use it, modify it, and do whatever you want with it.
 
 I tried my best to remember all the dependencies, I had to install to make it work, but I might have forgotten some. If you encounter any issue, please let me know.
@@ -43,3 +45,11 @@ The script isn't really clean, it is mostly useful, here are a few things you sh
 - Your markdown file is copied as `temp.md` and then modified, so no changes are made to your original file. BUT, if you already have a `temp.md` file, it will ask you if you want to overwrite it.
 - The script takes your first first-level title as the title of the document, then remove it from the markdown.
 - Because a markdown file is only supposed to have one first-level title, and that it is removed from the markdown, the script then removes a `#` from all the titles in the markdown, to bring them one level higher. If you have multiple first-level titles, don't worry, the script won't delete the `#` from them and transform them into plain text, it will just bring the second-level titles to first-level beside them.
+
+## Common errors
+
+- If you encouter a `file not found` type of error, it is usually because you pass a relative path to the script, for example using `~` instead of `/home/your-username`. 
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
