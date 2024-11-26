@@ -11,8 +11,10 @@ author="My Name"
 date=$(date +"%Y-%m-%d")  # Default date is today's date
 keywords=""
 footer_center="Footer text"
+subtitle=""
 toc=""
 margin=2.5
+font_size=12
 output="output.pdf"
 titlepage_logo=""
 logo_width=10
@@ -26,6 +28,9 @@ numbersections="true"
 toc_own_page="true"
 colorlinks="true"
 footnotes_pretty="true"
+footnotes_disable_backlinks="false"
+table_use_row_colors="true"
+use_long_tables="true"
 
 # Function to show usage
 usage() {
@@ -143,8 +148,14 @@ author: [$author]
 date: "$date"
 keywords: [$keywords]
 geometry: margin=${margin}cm
+fontsize: $font_size
 footer-center: $footer_center
+disable-header-and-footer: $disable_header_and_footer
+footnotes-disable-backlinks: $footnotes_disable_backlinks
+table-use-row-colors: $table_use_row_colors
+use-long-tables: $use_long_tables
 listings-no-page-break: true
+subtitle: $subtitle
 header-includes: |
     \RedeclareSectionCommands[
       afterskip=1.25ex plus .1ex

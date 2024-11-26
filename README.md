@@ -8,7 +8,7 @@ I tried my best to remember all the dependencies, I had to install to make it wo
 
 ## Installation
 
-Install [Pandoc](https://pandoc.org/installing.html) and [LaTeX](https://en.wikibooks.org/wiki/LaTeX/Installation#Distributions).
+Install [Pandoc USING CABAL](https://pandoc.org/installing.html#quick-cabal-method) otherwise bibliography breaks, and [LaTeX](https://en.wikibooks.org/wiki/LaTeX/Installation#Distributions).
 
 Install the [Eisvogel template](https://github.com/Wandmalfarbe/pandoc-latex-template/tree/master).
 
@@ -38,6 +38,31 @@ Options:
 ```
 
 If you wish to change default values, go to the configuration file.
+
+### Footnotes
+
+If you want to use footnotes in your markdown, you can use the following syntax :
+
+```markdown
+This is a footnote[^1].
+
+[^1]: This is the text of the footnote.
+```
+
+You can use the following Pandoc options to customize the look and the backlinking of the footnotes : 
+
+```
+footnotes_pretty="true"
+footnotes_disable_backlinks="false"
+```
+
+### Bibliography
+
+I can't manage to make the bibliography (the integration of a `.bib` file) work with the script. If you have any idea, please let me know. 
+
+In the meantime, you will have to either use the footnotes references, or hard-coded references using Latex `^{[1]}` format, that looks something like this$^{[1]}$.
+
+Anyway, if you are doing a project so big you have to including a bibliography, you should probably use LaTeX directly, Pandoc can only do so much.
 
 ## Explanation
 
