@@ -8,7 +8,7 @@ I tried my best to remember all the dependencies, I had to install to make it wo
 
 ## Installation
 
-Install [Pandoc USING CABAL](https://pandoc.org/installing.html#quick-cabal-method) otherwise bibliography breaks, and [LaTeX](https://en.wikibooks.org/wiki/LaTeX/Installation#Distributions).
+Install [Pandoc USING CABAL](https://pandoc.org/installing.html#quick-cabal-method) preferred method if you want to try to make the bibliography work, and [LaTeX](https://en.wikibooks.org/wiki/LaTeX/Installation#Distributions).
 
 Install the [Eisvogel template](https://github.com/Wandmalfarbe/pandoc-latex-template/tree/master).
 
