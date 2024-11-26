@@ -60,7 +60,7 @@ footnotes_disable_backlinks="false"
 
 I can't manage to make the bibliography (the integration of a `.bib` file) work with the script. If you have any idea, please let me know. 
 
-In the meantime, you will have to either use the footnotes references, or hard-coded references using Latex `^{[1]}` format, that looks something like this$^{[1]}$.
+In the meantime, you will have to either use the footnotes references, or hard-coded references using Latex `^{[1]}` format, that looks something like this.
 
 Anyway, if you are doing a project so big you have to including a bibliography, you should probably use LaTeX directly, Pandoc can only do so much.
 
