@@ -31,6 +31,8 @@ footnotes_pretty="true"
 footnotes_disable_backlinks="false"
 table_use_row_colors="true"
 use_long_tables="true"
+mermaid_width=1920
+mermaid_height=1080
 
 # Function to show usage
 usage() {
@@ -179,7 +181,7 @@ mv "$tmp_file" "$temp_file_path"
 
 # Run mmdc on the temp file
 images_ext="png"
-mmdc -i "$temp_file_path" -o "$temp_file_path" -e $images_ext -b transparent -t neutral -w 2500 -H 1080
+mmdc -i "$temp_file_path" -o "$temp_file_path" -e $images_ext -b transparent -t neutral -w $mermaid_width -H $mermaid_height
 
 # Create command
 command="pandoc $temp_file_path -f markdown-raw_tex -o $output --pdf-engine=xelatex --from markdown --template eisvogel --listings --list-tables $toc"
